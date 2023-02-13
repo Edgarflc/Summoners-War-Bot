@@ -1,0 +1,24 @@
+import pyautogui
+import time
+
+# Attendez 5 secondes pour vous donner le temps de changer de fenêtre
+time.sleep(5)
+
+# Trouvez la fenêtre Bluestacks
+bluestacks_windows = pyautogui.getWindowsWithTitle('Bluestacks')
+
+# Vérifiez si la fenêtre Bluestacks a été trouvée
+if len(bluestacks_windows) == 0:
+    print("La fenêtre Bluestacks n'a pas été trouvée.")
+
+# Si la fenêtre Bluestacks a été trouvée, effectuez un clic à des coordonnées spécifiques
+bluestacks_window = bluestacks_windows[0]
+
+# Définissez les coordonnées (x, y) à cliquer
+x, y = 100, 100
+
+# Déplacez le curseur de souris à ces coordonnées dans la fenêtre Bluestacks
+pyautogui.moveTo(bluestacks_window.left + x, bluestacks_window.top + y)
+
+# Cliquez à ces coordonnées
+pyautogui.click()
